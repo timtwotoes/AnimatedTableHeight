@@ -35,7 +35,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 
     // Buttons
     @IBAction func animateRowHeight(_ sender: NSButton) {
-        if let cell = table.view(atColumn: 0, row: 0, makeIfNecessary: false) as? DoubleTextCellView {
+        if let cell = table.view(atColumn: 0, row: 0, makeIfNecessary: false) as? DoubleTextCellView,
+           let cellTwo = table.view(atColumn: 0, row: 1, makeIfNecessary: false) as? DoubleTextCellView {
             // Batch animations in the table view
             table.beginUpdates()
             // Animate changing the spacing between the textfields and row height
@@ -46,7 +47,13 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
                     cell.textFieldSpacing = 4
                 }
                 
-                table.noteHeightOfRows(withIndexesChanged: IndexSet(integer: 0))
+                if cellTwo.textFieldSpacing == 4 {
+                    cellTwo.textFieldSpacing = 80
+                } else {
+                    cellTwo.textFieldSpacing = 4
+                }
+                
+                table.noteHeightOfRows(withIndexesChanged: IndexSet(arrayLiteral: 0, 1))
             }
             table.endUpdates()
         }
