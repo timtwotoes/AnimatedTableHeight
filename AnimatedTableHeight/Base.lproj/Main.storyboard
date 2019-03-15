@@ -806,6 +806,9 @@
                                 <buttonCell key="cell" type="push" title="Animate Row Height" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mpw-H7-pKv">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                                 </buttonCell>
                                 <connections>
                                     <action selector="animateRowHeight:" target="XfG-lQ-9wD" id="0hH-IW-GOZ"/>
